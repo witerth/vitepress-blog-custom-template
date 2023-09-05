@@ -1,0 +1,57 @@
+.prose blockquote {
+  font-weight: normal;
+  font-style: normal;
+  color: inherit;
+  border-left-color: var(--cyna-2) !important;
+  border-left: 2px solid;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+header > h1 {
+  font-weight: normal !important;
+  font-size: 28px;
+  text-align: center;
+  line-height: 40px;
+  @apply pb-1
+}
+
+.prose .header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  font-weight: 500;
+  user-select: none;
+  opacity: 0;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: bolder;
+  margin: 0;
+  @apply pb-2 pt-10;
+}
+
+.prose p{
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.prose h2 {
+  border-top: none;
+}
+
+.vp-doc ol{
+  @apply pl-10
+}
+
+.vp-doc ul{
+  @apply pl-10
+}

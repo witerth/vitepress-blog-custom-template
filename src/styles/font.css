@@ -1,0 +1,83 @@
+@import "lxgw-wenkai-screen-webfont/style.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/400.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/400-italic.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/500.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/500-italic.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/700.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/800.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/700-italic.css";
+@import "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@4.5.11/800-italic.css";
+
+@font-face {
+  font-family: smileySans;
+  src: url("https://cdn.statically.io/gh/fzdwx/get/main/font/smileySans.woff2")
+    format("woff2");
+}
+
+/* @font-face {
+  font-family: zed;
+  src: url("/font/zed-mono-extended.ttf");
+} */
+
+:root {
+  /* --fjinkai: "jinkaiFont", sans-serif; */
+  --smileySans: "smileySans";
+  --wenkai: "LXGW WenKai Screen", Calibri, Arial, sans-serif;
+  --jet: "Jetbrains Mono", monospace;
+  /* --f1: "f1Font-Bold"; */
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  direction: ltr;
+  font-synthesis: weight;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--wenkai);
+}
+
+li,
+p {
+  font-family: var(--wenkai);
+  font-size: 18px !important;
+}
+
+.outline-link {
+  font-family: var(--vp-font-family-base);
+  font-size: 14px !important;
+  text-decoration: none;
+}
+
+code {
+  font-family: var(--jet) !important;
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+.VPNavBarMenuLink {
+  font-family: var(--smileySans) !important;
+}
+
+.custom-block-title {
+  font-size: 19px;
+  font-family: var(--smileySans);
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--smileySans);
+  font-weight: normal !important;
+  font-style: italic;
+  font-size: 22px !important;
+  /* background-image: linear-gradient(to right, var(--tw-gradient-stops)); */
+  /* @apply bg-gradient-to-r bg-clip-text  text-transparent
+  from-blue-2 to-cyna-1
+  animate-text; */
+}

@@ -1,0 +1,155 @@
+.home-intro a,
+.vp-doc a {
+  color: var(--link-color) !important;
+  box-shadow: 0 1px 0 var(--link-underline-shadow);
+  font-weight: 500 !important;
+  transition: var(--link-transition) !important;
+  text-decoration: none !important;
+}
+
+.home-intro a:hover,
+.vp-doc a:hover {
+  color: var(--link-hover-color) !important;
+  box-shadow: 0 2px 0px 0 var(--link-hover-underline-color);
+  font-weight: 700 !important;
+}
+
+.props-content h2 {
+  border-top: none;
+  padding-top: 0;
+}
+
+.outline-link.active {
+  color: var(--link-hover-color) !important;
+}
+
+#VPSidebarNav > div > section > div.item > h2 {
+  font-size: 1.1em !important;
+}
+
+.VPSidebarItem .item .text {
+  font-size: 0.9em !important;
+  padding-right: 10px;
+}
+
+/* Doc.tsx  */
+.VPDocFooter {
+  visibility: hidden;
+}
+
+.VPDoc .content {
+  padding-bottom: 0;
+}
+
+.VPDocAside {
+  @apply lg:w-[200px];
+}
+
+.aside {
+  @apply left-24;
+}
+
+.doc-meta {
+  @apply lg:ml-24;
+}
+
+.VPDoc .main {
+  @apply lg:w-[700px] md:w-[650px];
+}
+/* end */
+
+header > h1 {
+  font-size: 2.25em;
+  margin-top: 0;
+  line-height: 1.1111111;
+}
+
+/*
+pageList.vue
+*/
+.post-entry {
+  position: relative;
+  margin-bottom: var(--gap);
+  padding: var(--gap);
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.entry-header h2 {
+  transition: var(--link-transition);
+  display: inline-block;
+}
+
+.post-entry:hover .entry-header h2 {
+  color: var(--link-hover-color);
+  box-shadow: var(--link-hover-underline-shadow);
+}
+
+@media (max-width: 500px) {
+  .first-entry .entry-header h1 {
+    font-size: 30px;
+  }
+
+  .first-entry .entry-content {
+    font-size: 16px;
+  }
+}
+
+.entry-content {
+  margin: 8px 0;
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-3 {
+  -webkit-line-clamp: 3 !important;
+}
+
+.entry-footer,
+.entry-footer span > a {
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+.entry-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+  content: none;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: none;
+}
+
+.prose
+  :where(blockquote p:first-of-type):not(
+    :where([class~="not-prose"] *)
+  )::before {
+  content: none;
+}
+.prose
+  :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
+  content: none;
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.vp-doc li + li {
+  margin-top: 0px;
+}
