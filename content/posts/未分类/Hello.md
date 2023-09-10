@@ -1,4 +1,5 @@
 ---
+group: 操作系统
 title: "Getting started"
 date: 2023-03-23T22:27:31+08:00
 layout: post

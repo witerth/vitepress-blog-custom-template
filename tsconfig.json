@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "isolatedModules": true,
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node","unplugin-icons/types/vue"],
     "paths": {
       "@/*": ["./src/*"],
       "preact/*": ["./.vitepress/theme/empty.d.ts"]

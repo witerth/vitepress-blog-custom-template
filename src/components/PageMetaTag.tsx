@@ -3,16 +3,18 @@ interface Props {
   tags: string[];
   layout: string;
 }
+import TagIcon from "~icons/solar/tag-bold";
 
 const tagList = (tags: string[], layout: string) => {
   return tags.map((tag) => {
-   return (
-    <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
-       <a class={""} href={tagsUrl(layout, tag)}>
-          {tag}
+    return (
+      <span class="page-tag">
+        <a class={"flex items-center ml-1 mr-4"} href={tagsUrl("post", tag)}>
+          <TagIcon></TagIcon>
+          <span class={"ml-1"}>  {tag}</span>
         </a>
-    </span>
-   )
+      </span>
+    );
   });
 };
 
@@ -20,7 +22,7 @@ export default ({ show, tags, layout }: Props) => {
   return (
     <div
       class={`meta-tag-list flex flex-wrap ${
-        show ? " mt-3 " : " basis-3/5 flex-grow "
+        show ? "" : " basis-3/5 flex-grow "
       }`}
     >
       {tagList(tags, layout)}

@@ -72,7 +72,7 @@ code {
 }
 
 .VPNavBarTitle .title {
-  font-family: var(--smileySans);
+  /* font-family: var(--smileySans); */
   font-weight: normal !important;
   font-style: italic;
   font-size: 22px !important;

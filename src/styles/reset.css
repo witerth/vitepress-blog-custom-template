@@ -117,3 +117,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.VPLocalSearchBox .search-bar{
+  border-width: 2px !important;
+}

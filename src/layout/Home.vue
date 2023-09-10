@@ -17,7 +17,10 @@ const posts = computed(() => getPages("post", theme.value));
           class="home-intro vp-doc prose dark:prose-invert max-w-[800px] mr-20 ml-20 pb-8"
         />
       </article>
-      <PageList :pages="posts" />
+      <div class="flex">
+        <PageList :pages="posts" />
+        <div class="w-200px">123</div>
+      </div>
     </main>
   </div>
 </template>

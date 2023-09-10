@@ -31,9 +31,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  /* --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff;
-  --vp-c-brand-lighter: #9499ff; */
+  --vp-c-brand: #64b1ff;
+  --vp-c-brand-light: #749eff;
+  --vp-c-brand-lighter: #9499ff;
   --vp-c-brand-lightest: rgb(188, 192, 255);
   /* --vp-c-brand-dark: #535bf2; */
   /* --vp-c-brand-darker: #454ce1; */
@@ -69,6 +69,7 @@
   --color10: #d4a373;
   --link-background-color: rgb(232, 227, 247);
   --secondary: #605c71;
+  --tag-bg: #33a2f2;
 }
 
 .dark {
@@ -80,8 +81,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --link-hover-color: var(--cyna-3);
-  --link-color: var(--cyna-3);
+  --link-hover-color: var(--blue-1);
+  --link-color: var(--blue-1);
   --link-hover-underline-color: var(--blue-1);
   --link-underline-shadow: 0 1px 0 var(--link-color);
   --link-hover-underline-shadow: 0 2px 0 var(--link-hover-underline-color);

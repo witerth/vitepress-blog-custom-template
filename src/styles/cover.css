@@ -75,11 +75,51 @@ pageList.vue
   border-radius: var(--border-radius);
   border: 1px solid var(--border-bg);
   box-shadow: var(--box-shadow);
+  padding-bottom: 10px;
+
+}
+.post-entry:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1), 0 4px 8px 0 rgba(0,0,0,.1), 0 8px 16px 0 rgba(0,0,0,.1), 0 16px 32px 0 rgba(0,0,0,.1);
 }
 
 .entry-header h2 {
   transition: var(--link-transition);
   display: inline-block;
+}
+.entry-header-meta {
+  transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-size: 12px;
+
+}
+ .new-meta-item {
+  color: rgba(51,51,51,.7);
+  font-size: 14px;
+  line-height: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 2px;
+  margin: 0 8px 0 0;
+  border-radius: 4px;
+}
+ .new-meta-item  a{
+  font-family: 'Varela Round',"Microsoft YaHei","Source Sans Pro","Helvetica Neue",Menlo,Monaco,monospace,"Lucida Console",sans-serif,Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3",Source Han Sans CN Regular,WenQuanYi Micro Hei,Arial,sans-serif;
 }
 
 .post-entry:hover .entry-header h2 {
@@ -87,6 +127,15 @@ pageList.vue
   box-shadow: var(--link-hover-underline-shadow);
 }
 
+.page-tag a {
+  padding: 5px 8px;
+  background: #f7f7f7;
+  border-radius: 6px;
+}
+
+.page-tag a:hover  {
+  color: var(--link-color);
+}
 @media (max-width: 500px) {
   .first-entry .entry-header h1 {
     font-size: 30px;
@@ -112,19 +161,15 @@ pageList.vue
   -webkit-line-clamp: 3 !important;
 }
 
-.entry-footer,
+.entry-footer{
+  display: flex;
+  align-items: center;
+}
 .entry-footer span > a {
   color: var(--secondary);
   font-size: 13px;
 }
 
-.entry-link {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {
   content: none;
