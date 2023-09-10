@@ -6,12 +6,12 @@ const links: { url: string; lastmod: PageData["lastUpdated"] }[] = [];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<ThemeConfig>({
-  title: "fzdwx",
+  title: "renkin的博客",
   description: "What your say ?",
   lang: "zh-CN",
   themeConfig: {
     sortBy: "date",
-    icon: "https://raw.githubusercontent.com/fzdwx/blog-history/main/static/images/party_parrot.gif",
+    // icon: "https://raw.githubusercontent.com/fzdwx/blog-history/main/static/images/party_parrot.gif",
     dateFormat: "YYYY-MM-DD HH:mm:ss",
     editLink: {
       text: "✍",
@@ -28,7 +28,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {
-        text: "Home",
+        text: "主页",
         link: "/",
       },
       {
@@ -39,7 +39,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: "Docs",
         link: "/tags?layout=doc",
       },
-      { text: "Tags", link: "/tags?layout=post", activeMatch: "" },
+      { text: "#标签", link: "/tags?layout=post", activeMatch: "" },
     ],
 
     socialLinks: [

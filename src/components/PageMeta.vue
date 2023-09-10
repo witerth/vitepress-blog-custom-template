@@ -2,7 +2,6 @@
 import { useData } from "vitepress";
 import { Page } from "../types";
 
-import PageMetaTag from "./PageMetaTag";
 import PageMetaInfo from "./PageMetaInfo";
 
 const data = useData();
@@ -43,12 +42,6 @@ const show = computed(showFunc);
       :show="show"
       :showEditLink="showEditLink"
       :foratDatePattern="foratDatePattern"
-    />
-    <PageMetaTag
-      v-if="page.frontmatter.tags"
-      :layout="layout"
-      :tags="page.frontmatter.tags"
-      :show="show"
     />
   </div>
 </template>
