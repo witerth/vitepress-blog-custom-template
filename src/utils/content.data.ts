@@ -1,6 +1,6 @@
 import { Page } from "@/types";
 import dayjs from "dayjs";
-import { createContentLoader } from "vitepress";
+import { createContentLoader, scaffold } from "vitepress";
 
 function parseDesc(src: string | undefined, desc: string): string {
   if (desc && desc !== "") {
@@ -30,9 +30,17 @@ function parseSrc(src: string | undefined): string {
 
 const getPageCategory = (url: string) => {
   // 用正则去除/content/posts/ 后面去掉/xxx.html
-  const category = url.replace(/\/content\/posts\/(.*)\/.*\.html/, "$1");
-  return category.includes("post") ? "未分类" : category;
+  const cleanUrl = url.replace(/\/content\/(.*)\/.*\.html/, "$1");
+
+  const category = cleanUrl.includes("content") ? "未分类" : cleanUrl;
+  const categoryAry = category.split("/");
+
+  return {
+    category,
+    categoryAry,
+  };
 };
+
 export default createContentLoader("./content/**/*.md", {
   includeSrc: true,
   render: true,
@@ -41,19 +49,21 @@ export default createContentLoader("./content/**/*.md", {
       .map(({ url, frontmatter, html, src }) => {
         src = parseSrc(src);
         const date = dayjs(frontmatter.date).toDate().getTime();
+        const { category, categoryAry } = getPageCategory(url);
         const update = frontmatter.update
           ? dayjs(frontmatter.update).toDate().getTime()
           : date;
         return {
           title: frontmatter.title,
-          url,
           frontmatter,
           src: src,
           desc: parseDesc(html, frontmatter.summary),
           date: date,
-          update: update,
           html: html,
-          category: getPageCategory(url),
+          url,
+          update: update,
+          category,
+          categoryAry,
         };
       })
       .sort((a, b) => b.update - a.update);

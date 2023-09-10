@@ -5,6 +5,7 @@ from "./config";
 
 interface Page {
   category: string;
+  categoryAry: string[];
   title: string;
   url: string;
   date: string | number;
