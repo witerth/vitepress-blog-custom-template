@@ -28,6 +28,11 @@ function parseSrc(src: string | undefined): string {
   return pairs.slice(2).join("---");
 }
 
+const getPageCategory = (url: string) => {
+  // 用正则去除/content/posts/ 后面去掉/xxx.html
+  const category = url.replace(/\/content\/posts\/(.*)\/.*\.html/, "$1");
+  return category.includes("post") ? "未分类" : category;
+};
 export default createContentLoader("./content/**/*.md", {
   includeSrc: true,
   render: true,
@@ -48,6 +53,7 @@ export default createContentLoader("./content/**/*.md", {
           date: date,
           update: update,
           html: html,
+          category: getPageCategory(url),
         };
       })
       .sort((a, b) => b.update - a.update);
