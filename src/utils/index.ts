@@ -1,17 +1,41 @@
 import dayjs from "dayjs";
-import { ThemeConfig } from "../types";
+import { ThemeConfig, Page } from "../types";
 //@ts-ignore
-import { data as contents, Page } from "./content.data";
+import { data as contents } from "./content.data";
 
 export const inBrowser = typeof document !== "undefined";
 export const HASH_RE = /#.*$/;
 export const EXT_RE = /(index)?\.(md|html)$/;
 export const EXTERNAL_URL_RE = /^[a-z]+:/i;
 
+type CategoryRecord = {
+  pages: Page[];
+  total: number;
+  parent: string | null;
+};
+function buildCategoryMap(map: Map<string, CategoryRecord>, content: Page) {
+  content.categoryAry.map((c, i, arr) => {
+    const category: CategoryRecord = {
+      pages: [content],
+      total: 0,
+      parent: null,
+    };
+    i > 1 && (category.parent = arr[i - 1]);
+    if (!map.get(c)) {
+      map.set(c, category);
+    } else {
+      const cur = map.get(c);
+      cur!.pages?.push(content);
+      content.src && cur!.total++;
+    }
+  });
+}
 const init = () => {
   const pageMap = new Map<string, Page>();
+  const categoryMap = new Map<string, CategoryRecord>();
   const pageGroupByLayout = new Map<string, Page[]>();
   contents.forEach((content: Page) => {
+    if (content.url.includes("post")) buildCategoryMap(categoryMap, content);
     // 转义中文
     const url = encodeURI(content.url);
     pageMap.set(url, content);
@@ -26,11 +50,12 @@ const init = () => {
 
   return {
     pageMap,
+    categoryMap,
     pageGroupByLayout,
   };
 };
 
-const { pageMap, pageGroupByLayout } = init();
+const { pageMap, categoryMap, pageGroupByLayout } = init();
 
 /**
  * get path by route path
@@ -70,8 +95,8 @@ const formatDate = (time: string | number, pattern?: string) => {
 };
 
 const tagsUrl = (layout: string, tag: string) => {
-  if(layout ==="qamain"){
-    return `/qa.html?tag=${tag}`
+  if (layout === "qamain") {
+    return `/qa.html?tag=${tag}`;
   }
   return `/tags?layout=${layout}&tag=${tag}`;
 };
@@ -140,6 +165,7 @@ export {
   r,
   rs,
   pageMap,
+  categoryMap,
   pageGroupByLayout,
   formatDate,
   getPage,
