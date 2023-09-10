@@ -12,7 +12,9 @@ const init = () => {
   const pageMap = new Map<string, Page>();
   const pageGroupByLayout = new Map<string, Page[]>();
   contents.forEach((content: Page) => {
-    pageMap.set(content.url, content);
+    // 转义中文
+    const url = encodeURI(content.url);
+    pageMap.set(url, content);
     const layout = content.frontmatter.layout;
     if (!layout) {
       return;

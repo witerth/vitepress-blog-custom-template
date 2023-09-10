@@ -4,6 +4,7 @@ import {
 from "./config";
 
 interface Page {
+  category: string;
   title: string;
   url: string;
   date: string | number;
