@@ -21,12 +21,13 @@ const position = (page: Page) => {
 <template>
   <div class="pages main-content">
     <div class="post-entry mr-10 ml-10" v-for="page of pages">
-      <PageListItem
-        :position="position(page)"
-        :showCover="showCover(page)"
-        :page="page"
-      />
-      <a class="entry-link" :aria-label="page.title" :href="page.url"></a>
+      <a :aria-label="page.title" :href="page.url">
+        <PageListItem
+          :position="position(page)"
+          :showCover="showCover(page)"
+          :page="page"
+        />
+      </a>
     </div>
   </div>
 </template>
