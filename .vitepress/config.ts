@@ -11,12 +11,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   lang: "zh-CN",
   themeConfig: {
     sortBy: "date",
-    // icon: "https://raw.githubusercontent.com/fzdwx/blog-history/main/static/images/party_parrot.gif",
-    dateFormat: "YYYY-MM-DD HH:mm:ss",
+    dateFormat: "YYYY-MM-DD",
     editLink: {
       text: "✍",
       pattern: ({ relativePath }: { relativePath: string }) => {
-        return `https://github.com/fzdwx/vitepress-blog-theme/blob/main/${relativePath}`;
+        return `https://github.com/rennzhang/blog/blob/main/${relativePath}`;
       },
     },
     issues: {
@@ -43,7 +42,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/fzdwx/vitepress-blog-theme" },
+      { icon: "github", link: "https://github.com/rennzhang/blog" },
     ],
   },
   // head: [
@@ -68,14 +67,14 @@ export default defineConfigWithTheme<ThemeConfig>({
         lastmod: pageData.lastUpdated,
       });
   },
-  // buildEnd: getRssFeed({
-  //   author: {
-  //     name: "fzdwx",
-  //     email: "likelovec@gmail.com",
-  //   },
-  //   links: links,
-  //   baseUrl: "https://vitepress-blog-theme.vercel.app",
-  //   copyright:
-  //     "Copyright (c) 2023-present, fzdwx<likelovec@gmail.com> and blog contributors",
-  // }),
+  buildEnd: getRssFeed({
+    author: {
+      name: "rennzhang",
+      email: "zr906155099@gmail.com",
+    },
+    links: links,
+    baseUrl: "http://renkin.cn",
+    copyright:
+      "Copyright (c) 2023-present, rennzhang<zr906155099@gmail.com> and blog contributors",
+  }),
 });
