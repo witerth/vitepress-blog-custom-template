@@ -113,11 +113,25 @@ q:after {
   content: "";
   content: none;
 }
+body {
+  background-color: #f4f4f4;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-.VPLocalSearchBox .search-bar{
+.VPLocalSearchBox .search-bar {
   border-width: 2px !important;
+}
+.VPNavBar {
+  position: relative;
+  transition: all 3s;
+  div.title {
+    transition: all 0.5s ease-in;
+    margin-left: -180px;
+  }
+  &.fill div.title {
+    margin-left: 0;
+  }
 }
