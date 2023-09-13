@@ -26,23 +26,24 @@ const editLink = ({ editLinkPattern, relativePath, editLink }: Props) => {
 
 export default (porps: Props) => {
   const { show, page, showEditLink, editLinkText, foratDatePattern } = porps;
+  const category = computed(() => page.category.replace("posts/",""));
   return (
-    <div class="dark:text-dark-text/[.86] page-meta flex items-center text-sm my-2">
+    <div class="dark:text-dark-text/[.86] page-meta flex flex-wrap items-center text-sm my-2">
       <div class="new-meta-item author">
-        <a href="https://lucifer.ren/blog" rel="nofollow">
+        <a href="renkin.cn" rel="nofollow">
           renkin
         </a>
       </div>
       <div class="new-meta-item date">
         <div class="inline-block text-sm mr-4 flex items-center">
           <TimeIcon></TimeIcon>
-          <span class="ml-1">{formatDate(page.date, foratDatePattern)}</span>
+          <span class="ml-1">{formatDate(page.update||page.date, foratDatePattern)}</span>
         </div>
       </div>
       <div class="new-meta-item category">
         <div class="inline-block text-sm mr-4 flex items-center">
           <FolderIcon></FolderIcon>
-          <span class="ml-1">{page.category}</span>
+          <span class="ml-1">{category.value}</span>
         </div>
         {/* <a href="/blog/categories/91天学算法/" rel="nofollow">
             <i class="fas fa-folder-open" aria-hidden="true"></i>
@@ -72,13 +73,7 @@ export default (porps: Props) => {
               </span>
             </span> */}
       </div>
-      {page.date != page.update && show ? (
-        <div class="inline-block text-sm mr-4">
-          {formatDate(page.update, foratDatePattern)}
-        </div>
-      ) : (
-        <span></span>
-      )}
+
       {showEditLink ? (
         <div class="inline-block">
           <span

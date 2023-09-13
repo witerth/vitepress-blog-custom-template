@@ -130,11 +130,11 @@ pageList.vue
 }
 
 .page-tag a {
-  padding: 5px 8px;
-  background: #f7f7f7;
+  padding: 3px 6px;
+  background: var(--tag-bg);
   border-radius: 6px;
+  font-size: 12px;
 }
-
 .page-tag a:hover  {
   color: var(--link-color);
 }
@@ -150,7 +150,7 @@ pageList.vue
 
 .entry-content {
   margin: 8px 0;
-  color: var(--secondary);
+  color: var(--color6);
   font-size: 14px;
   line-height: 1.6;
   overflow: hidden;
@@ -166,11 +166,9 @@ pageList.vue
 .entry-footer{
   display: flex;
   align-items: center;
+  padding-top: 8px;
 }
-.entry-footer span > a {
-  color: var(--secondary);
-  font-size: 13px;
-}
+
 
 
 .prose :where(code):not(:where([class~="not-prose"] *))::before {

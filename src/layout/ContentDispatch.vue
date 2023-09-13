@@ -51,7 +51,7 @@ const shouldMb = () => {
 }
 
 .should-mb {
-  @apply pt-12;
+  padding-top: 6rem;
 }
 
 .ContentDispatch.is-home {

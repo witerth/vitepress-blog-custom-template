@@ -9,7 +9,7 @@ const tagList = (tags: string[], layout: string) => {
   return tags.map((tag) => {
     return (
       <span class="page-tag">
-        <a class={"flex items-center ml-1 mr-4"} href={tagsUrl("post", tag)}>
+        <a class={"flex items-center ml-1 mr-2 mb-1"} href={tagsUrl("post", tag)}>
           <TagIcon></TagIcon>
           <span class={"ml-1"}>{tag}</span>
         </a>
