@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "isolatedModules": true,
-    "types": ["vite/client", "node","unplugin-icons/types/vue"],
+    "types": ["vite/client", "node", "unplugin-icons/types/vue"],
     "paths": {
       "@/*": ["./src/*"],
       "preact/*": ["./.vitepress/theme/empty.d.ts"]
@@ -29,6 +29,7 @@
     "src/**/*.vue",
     "auto-imports.d.ts",
     "components.d.ts",
-    "src/utils/xml.js"
+    "src/utils/xml.js",
+    ".vitepress/config.mts"
   ]
 }
