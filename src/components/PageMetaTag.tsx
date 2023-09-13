@@ -11,7 +11,7 @@ const tagList = (tags: string[], layout: string) => {
       <span class="page-tag">
         <a class={"flex items-center ml-1 mr-4"} href={tagsUrl("post", tag)}>
           <TagIcon></TagIcon>
-          <span class={"ml-1"}>  {tag}</span>
+          <span class={"ml-1"}>{tag}</span>
         </a>
       </span>
     );

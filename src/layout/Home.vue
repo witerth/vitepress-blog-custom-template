@@ -49,7 +49,6 @@ const posts = computed(() => getPages("post", theme.value));
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1152px;
 }
 
 @media (min-width: 960px) {

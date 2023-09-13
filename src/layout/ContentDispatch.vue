@@ -21,19 +21,17 @@ const shouldMb = () => {
 
 <template>
   <div
-    class="ContentDispatch"
+    class="ContentDispatch center"
     :class="{
       'is-home': frontmatter.layout === 'home',
       'should-mb': shouldMb(),
     }"
   >
     <Home v-if="frontmatter.layout === 'home'" />
-    <Post
-      v-else-if="
-        frontmatter.layout === 'post' || frontmatter.layout === 'issue'
-      "
+    <Post v-else-if="frontmatter.layout === 'post' ||frontmatter.layout === 'issue'" />
+    <Doc
+      v-else-if=" frontmatter.layout === 'doc'"
     />
-    <Doc v-else-if="frontmatter.layout === 'doc'" />
     <Tags v-else-if="frontmatter.layout === 'tags'" />
     <Links v-else-if="frontmatter.layout === 'links'" />
     <Qa v-else-if="frontmatter.layout === 'qamain'" />
@@ -45,6 +43,7 @@ const shouldMb = () => {
 
 <style scoped>
 .ContentDispatch {
+  position: relative;
   flex-grow: 1;
   flex-shrink: 0;
   margin: var(--vp-layout-top-height, 0px) auto 0;

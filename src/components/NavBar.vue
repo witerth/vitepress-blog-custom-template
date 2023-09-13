@@ -102,7 +102,7 @@ const { site } = useData();
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: calc(var(--vp-layout-max-width) - 64px);
+  /* max-width: calc(var(--vp-layout-max-width) - 64px); */
   height: var(--vp-nav-height);
   pointer-events: none;
 }

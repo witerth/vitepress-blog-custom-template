@@ -114,7 +114,7 @@ q:after {
   content: none;
 }
 body {
-  background-color: #f4f4f4;
+  background-color: var(--vp-c-bg-alt);
 }
 table {
   border-collapse: collapse;
@@ -125,13 +125,33 @@ table {
   border-width: 2px !important;
 }
 .VPNavBar {
-  position: relative;
-  transition: all 3s;
   div.title {
-    transition: all 0.5s ease-in;
+    transition: margin 0.3s ease-in;
+    visibility: hidden;
     margin-left: -180px;
   }
-  &.fill div.title {
+  &.fill {
+    background-color: var(--vp-nav-bg-color);
+
+    div.title {
+    visibility: visible;
+    margin-left: 0;
+  }}
+}
+.VPNav {
+  position: fixed !important;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.1), 0 2px 4px 0 rgba(0,0,0,.1);
+}
+@media (max-width: 768px) {
+  .VPNav {
+    position: fixed !important;
+  }
+  .VPNavBar {
+    background-color: var(--vp-nav-bg-color);
+    color:#161618;
+  }
+  .VPNavBar div.title {
+    visibility: visible;
     margin-left: 0;
   }
 }

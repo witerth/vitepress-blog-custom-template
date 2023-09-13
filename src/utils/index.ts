@@ -84,7 +84,7 @@ const getPages = (layout: string, theme: ThemeConfig) => {
   return sort(pageGroupByLayout.get(layout) || [], theme);
 };
 
-const defaultDataFormat = "YYYY-MM-DD HH:mm:ss";
+const defaultDataFormat = "YYYY-MM-DD";
 
 const formatDate = (time: string | number, pattern?: string) => {
   if (pattern === undefined) {
