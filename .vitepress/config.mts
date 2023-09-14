@@ -6,17 +6,16 @@ const links: { url: string; lastmod: PageData["lastUpdated"] }[] = [];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<ThemeConfig>({
-  title: "fzdwx",
+  title: "renkin的博客",
   description: "What your say ?",
   lang: "zh-CN",
   themeConfig: {
     sortBy: "date",
-    icon: "https://raw.githubusercontent.com/fzdwx/blog-history/main/static/images/party_parrot.gif",
-    dateFormat: "YYYY-MM-DD HH:mm:ss",
+    dateFormat: "YYYY-MM-DD",
     editLink: {
       text: "✍",
       pattern: ({ relativePath }: { relativePath: string }) => {
-        return `https://github.com/fzdwx/vitepress-blog-theme/blob/main/${relativePath}`;
+        return `https://github.com/rennzhang/blog/blob/main/${relativePath}`;
       },
     },
     issues: {
@@ -28,7 +27,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {
-        text: "Home",
+        text: "主页",
         link: "/",
       },
       {
@@ -39,11 +38,11 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: "Docs",
         link: "/tags?layout=doc",
       },
-      { text: "Tags", link: "/tags?layout=post", activeMatch: "" },
+      { text: "#标签", link: "/tags?layout=post", activeMatch: "" },
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/fzdwx/vitepress-blog-theme" },
+      { icon: "github", link: "https://github.com/rennzhang/blog" },
     ],
   },
   // head: [
@@ -68,14 +67,14 @@ export default defineConfigWithTheme<ThemeConfig>({
         lastmod: pageData.lastUpdated,
       });
   },
-  // buildEnd: getRssFeed({
-  //   author: {
-  //     name: "fzdwx",
-  //     email: "likelovec@gmail.com",
-  //   },
-  //   links: links,
-  //   baseUrl: "https://vitepress-blog-theme.vercel.app",
-  //   copyright:
-  //     "Copyright (c) 2023-present, fzdwx<likelovec@gmail.com> and blog contributors",
-  // }),
+  buildEnd: getRssFeed({
+    author: {
+      name: "rennzhang",
+      email: "zr906155099@gmail.com",
+    },
+    links: links,
+    baseUrl: "http://renkin.cn",
+    copyright:
+      "Copyright (c) 2023-present, rennzhang<zr906155099@gmail.com> and blog contributors",
+  }),
 });

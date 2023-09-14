@@ -86,8 +86,8 @@ refresh(state.value.tag);
           @click="resetTag(tag)"
           :class="{ 'text-cyna-3': tag === state.tag }"
           class="tag"
-          >{{ tag }}</a
-        >
+          >{{ tag }}
+        </a>
       </nav>
       <div class="tags-content">
         <div class="page-item-container">
@@ -142,7 +142,6 @@ refresh(state.value.tag);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1152px;
 }
 
 @media (min-width: 960px) {

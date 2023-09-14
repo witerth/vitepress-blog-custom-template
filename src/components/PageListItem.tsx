@@ -19,7 +19,7 @@ const getCoverTop = ({ position, page }: Props) => {
       ))}
 
       {r(position === "left", () => (
-        <div class={"cover-left row-span-3 pr-2"}>
+        <div class={"cover-left row-span-3 pr-2 "}>
           <PageListItemCover position={position} page={page} />
         </div>
       ))}

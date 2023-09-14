@@ -4,6 +4,7 @@
   "description": "A blog custom template for vitepress",
   "module": "./src/index.ts",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@iconify/json": "^2.2.42",
     "@tailwindcss/typography": "^0.5.9",
@@ -12,13 +13,14 @@
     "@vue-macros/volar": "^0.9.4",
     "autoprefixer": "^10.4.14",
     "feed": "^4.2.2",
+    "less": "^4.2.0",
     "postcss": "^8.4.21",
     "sitemap": "^7.1.1",
     "tailwindcss": "^3.3.1",
     "unplugin-auto-import": "^0.15.2",
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
-    "vitepress": "1.0.0-alpha.72",
+    "vitepress": "1.0.0-rc.12",
     "vue": "^3.2.47"
   },
   "scripts": {

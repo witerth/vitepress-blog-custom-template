@@ -445,7 +445,7 @@ func _init() {
 
 	repo = os.Getenv("repo")
 	if repo == "" {
-		repo = "vitepress-blog-theme"
+		repo = "blog"
 	}
 
 	ctx := context.Background()
